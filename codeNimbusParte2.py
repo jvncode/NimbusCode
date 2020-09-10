@@ -1,5 +1,3 @@
-
-
 '''
 Creo el diccionario original
 '''
@@ -19,18 +17,15 @@ Las listas de valores hay que convertirlas en tuplas para que sean 'hashables' c
 fin de que puedan comportarse como claves y poder tener acceso a ellas posteriormente.
 '''
 
-
 def invert_dict(d):
     inverse = dict()
-    for key in d:
-        # ----> Conversión a tupla de los valores que pasarán a ser claves
-        val = tuple(d[key])
+    for key in d: 
+        val = tuple(d[key])  # ----> Conversión a tupla de los valores que pasarán a ser claves
         if val not in inverse:
             inverse[val] = [key]
         else:
             inverse[val].append(key)
     return inverse
-
 
 invert_contacts = invert_dict(contacts)
 print(invert_contacts)
@@ -45,7 +40,6 @@ el resultado sería que nos devolvería el/los números de teléfono de las pers
 en dicha empresa.
 '''
 
-
 def search(date):
     if isinstance(date, int):  # Compruebo si la clave es numérica o una cadena
         date = int(date) # En caso de ser numérico convierto a int para que permita buscar por formato de fecha de nacimiento (AAAAMMDD)
@@ -57,6 +51,4 @@ def search(date):
             result += invert_contacts.get(key)
     return print('Criterio de búsqueda: {}\n{} Contactos encontrados: {}'.format(date, len(result), result))
 
-
-# Ejemplo: Realizo búsqueda por empresa ----> Devuelve 2 contactos telefónicos
-search('abengoa')
+search('abengoa')  # Ejemplo: Realizo búsqueda por empresa ----> Devuelve 2 contactos telefónicos

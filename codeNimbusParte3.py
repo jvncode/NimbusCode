@@ -9,8 +9,8 @@ with open('contactsInput.csv', 'r') as inputFile:
     contReader = csv.reader(inputFile, delimiter=';')
     next(contReader)  # Salto la cabecera del archivo de entrada
     for row in contReader:
-        #  Convierto cada cadena de entrada en un elemento del diccionario
-        contactsInput[row[0]] = row[1:]
+        contactsInput[row[0]] = row[1:] #  Convierto cada cadena de entrada en un elemento del diccionario
+
 inputFile.close()
 
 '''
