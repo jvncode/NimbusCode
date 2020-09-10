@@ -13,8 +13,9 @@ contacts = {
 }
 
 '''
-Las listas de valores hay que convertirlas en tuplas para que sean 'hashables' con el
-fin de que puedan comportarse como claves y poder tener acceso a ellas posteriormente.
+Decido que las listas de valores hay que convertirlas en tuplas para que sean 'hashables'
+con el fin de que puedan comportarse como claves y poder tener acceso a ellas posteriormente.
+Por tanto modifico la función original en la linea 24.
 '''
 
 def invert_dict(d):
@@ -35,19 +36,19 @@ print(invert_contacts)
 de contacto de cada usuario pudiendo acceder a ellos no solo por número de teléfono, como
 en el diccionario original, sino por cualquiera de los valores que en el diccionario invertido
 ahora son claves.
-* Esto nos permitiría a través de la siguiente función buscar por ejemplo por nombre de empresa, 
-el resultado sería que nos devolvería el/los números de teléfono de las personas que trabajan 
-en dicha empresa.
+* Esto nos permite a través de la siguiente función buscar por ejemplo una serie dde contactos 
+por nombre de empresa. El resultado nos devuelve el/los números de teléfono
+de las personas que trabajan en dicha empresa, si es que la consulta tiene éxito.
 '''
 
 def search(date):
-    if isinstance(date, int):  # Compruebo si la clave es numérica o una cadena
+    if isinstance(date, int):  # Compruebo si la clave es numérica
         date = int(date) # En caso de ser numérico convierto a int para que permita buscar por formato de fecha de nacimiento (AAAAMMDD)
     else:
-        date = date.upper()  # En caso de ser cadena uniformo a mayúsculas
+        date = date.upper()  # En caso de ser cadena uniformo en mayúsculas
     result = []
     for key in invert_contacts:
-        if date in key:
+        if date in key:  # Si la consulta forma parte de alguna clave almaceno en su valor en result.
             result += invert_contacts.get(key)
     return print('Criterio de búsqueda: {}\n{} Contactos encontrados: {}'.format(date, len(result), result))
 
