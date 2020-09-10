@@ -1,16 +1,16 @@
-# **Nimbus Technology**
+# **NimbusCode**
 ****
 
 * Prueba técnica solicitada por Nimbus Technology
 
 ## Ejecución 🔧
 
-* Existen 3 archivos con cada una de las 3 partes del ejercicio
+* Existen 3 archivos que corresponden a cada una de las 3 partes del ejercicio
 ```
 codeNimbusParte1.py  |  codeNimbusParte2.py | codeNimbusParte3.py
 ```
 
-* También cuenta con 2 archivos CSV, uno representa el archivo de entrada y el otro de salida de datos.
+* También cuenta con 2 archivos CSV, uno representa el archivo de entrada y el otro el de salida de datos.
 ```
 contactsInput.csv | contactsOutput.csv
 ```
